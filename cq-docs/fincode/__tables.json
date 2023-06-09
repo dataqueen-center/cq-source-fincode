@@ -1,0 +1,183 @@
+[
+  {
+    "name": "fincode_payments",
+    "title": "Fincode Payments",
+    "description": "",
+    "columns": [
+      {
+        "name": "_cq_source_name",
+        "type": "utf8"
+      },
+      {
+        "name": "_cq_sync_time",
+        "type": "timestamp[us, tz=UTC]"
+      },
+      {
+        "name": "_cq_id",
+        "type": "uuid",
+        "is_primary_key": true
+      },
+      {
+        "name": "_cq_parent_id",
+        "type": "uuid"
+      },
+      {
+        "name": "shop_id",
+        "type": "utf8"
+      },
+      {
+        "name": "id",
+        "type": "utf8"
+      },
+      {
+        "name": "pay_type",
+        "type": "utf8"
+      },
+      {
+        "name": "status",
+        "type": "utf8"
+      },
+      {
+        "name": "access_id",
+        "type": "utf8"
+      },
+      {
+        "name": "process_date",
+        "type": "utf8"
+      },
+      {
+        "name": "job_code",
+        "type": "utf8"
+      },
+      {
+        "name": "item_code",
+        "type": "utf8"
+      },
+      {
+        "name": "amount",
+        "type": "utf8"
+      },
+      {
+        "name": "tax",
+        "type": "utf8"
+      },
+      {
+        "name": "total_amount",
+        "type": "utf8"
+      },
+      {
+        "name": "customer_group_id",
+        "type": "utf8"
+      },
+      {
+        "name": "customer_id",
+        "type": "utf8"
+      },
+      {
+        "name": "card_no",
+        "type": "utf8"
+      },
+      {
+        "name": "card_id",
+        "type": "utf8"
+      },
+      {
+        "name": "expire",
+        "type": "utf8"
+      },
+      {
+        "name": "holder_name",
+        "type": "utf8"
+      },
+      {
+        "name": "card_no_hash",
+        "type": "utf8"
+      },
+      {
+        "name": "method",
+        "type": "utf8"
+      },
+      {
+        "name": "pay_times",
+        "type": "utf8"
+      },
+      {
+        "name": "forward",
+        "type": "utf8"
+      },
+      {
+        "name": "issuer",
+        "type": "utf8"
+      },
+      {
+        "name": "transaction_id",
+        "type": "utf8"
+      },
+      {
+        "name": "approve",
+        "type": "utf8"
+      },
+      {
+        "name": "auth_max_date",
+        "type": "utf8"
+      },
+      {
+        "name": "client_field_1",
+        "type": "utf8"
+      },
+      {
+        "name": "client_field_2",
+        "type": "utf8"
+      },
+      {
+        "name": "client_field_3",
+        "type": "utf8"
+      },
+      {
+        "name": "tds_type",
+        "type": "utf8"
+      },
+      {
+        "name": "tds2_type",
+        "type": "utf8"
+      },
+      {
+        "name": "tds2_ret_url",
+        "type": "utf8"
+      },
+      {
+        "name": "tds2_status",
+        "type": "utf8"
+      },
+      {
+        "name": "merchant_name",
+        "type": "utf8"
+      },
+      {
+        "name": "send_url",
+        "type": "utf8"
+      },
+      {
+        "name": "subscription_id",
+        "type": "utf8"
+      },
+      {
+        "name": "brand",
+        "type": "utf8"
+      },
+      {
+        "name": "error_code",
+        "type": "utf8"
+      },
+      {
+        "name": "created",
+        "type": "utf8"
+      },
+      {
+        "name": "updated",
+        "type": "utf8"
+      }
+    ],
+    "relations": []
+  }
+]
