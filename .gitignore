@@ -1,2 +1,6 @@
 cq-source-fincode
 test-config.yaml
+dist
+*.log
+.cq
+cq-docs

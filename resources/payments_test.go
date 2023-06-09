@@ -9,7 +9,7 @@ import (
 )
 
 func TestPayments(t *testing.T) {
-	var res map[string]interface{}
+	var res PageWrapper[PaymentsResponse]
 	if err := faker.FakeObject(&res); err != nil {
 		t.Fatal(err)
 	}
