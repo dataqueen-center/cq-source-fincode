@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"time"
 
 	"github.com/apache/arrow/go/v13/arrow"
 	"github.com/cloudquery/plugin-sdk/v3/schema"
@@ -52,6 +53,8 @@ type PaymentsResponse struct {
 	ErrorCode       string  `json:"error_code"`
 	Created         string  `json:"created"`
 	Updated         string  `json:"updated"`
+	CreatedAt       string  `json:"created_at"`
+	UpdatedAt       string  `json:"updated_at"`
 }
 
 func Payments() *schema.Table {
@@ -96,8 +99,8 @@ func Payments() *schema.Table {
 			{Name: "subscription_id", Type: arrow.BinaryTypes.String},
 			{Name: "brand", Type: arrow.BinaryTypes.String},
 			{Name: "error_code", Type: arrow.BinaryTypes.String},
-			{Name: "created", Type: arrow.BinaryTypes.String},
-			{Name: "updated", Type: arrow.BinaryTypes.String},
+			{Name: "created_at", Type: arrow.BinaryTypes.String},
+			{Name: "updated_at", Type: arrow.BinaryTypes.String},
 		},
 	}
 }
@@ -122,6 +125,17 @@ func fetchPayments(ctx context.Context, meta schema.ClientMeta, parent *schema.R
 			client.Logger.Info().Msgf("Total count: %d (%s)", paymentsPage.TotalCount, payType)
 			for _, payment := range paymentsPage.List {
 				client.Logger.Debug().Msgf("Payment: %v", payment)
+				// parse date: 2023/05/09 20:03:32.528
+				created_at, err := time.Parse("2006/01/02 15:04:05.000", payment.Created)
+				if err != nil {
+					return err
+				}
+				payment.CreatedAt = created_at.Format(time.RFC3339Nano)
+				updated_at, err := time.Parse("2006/01/02 15:04:05.000", payment.Updated)
+				if err != nil {
+					return err
+				}
+				payment.UpdatedAt = updated_at.Format(time.RFC3339Nano)
 				res <- payment
 				total_resources++
 			}
